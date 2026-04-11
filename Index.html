@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AgentulDeVacante – Stoica Robert</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --sand:#f5efe6;--cream:#fdf9f3;--ocean:#1a5c7a;--sky:#2e8fb5;--gold:#c9933a;--dark:#14232e;--text:#2d3d47;--muted:#7a8f99;
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 6vw;background:rgba(253,249,243,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,147,58,.15);}
+    .nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--ocean);letter-spacing:.02em;}
+    .nav-logo span{color:var(--gold);font-style:italic;}
+    .nav-links{display:flex;gap:2.2rem;list-style:none;}
+    .nav-links a{text-decoration:none;font-size:.9rem;font-weight:500;color:var(--text);letter-spacing:.04em;transition:color .25s;}
+    .nav-links a:hover{color:var(--gold);}
+    .nav-cta{background:var(--ocean);color:#fff!important;padding:.5rem 1.2rem;border-radius:50px;transition:background .25s!important;}
+    .nav-cta:hover{background:var(--sky)!important;}
+    #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 6vw 4rem;gap:4rem;position:relative;overflow:hidden;}
+    #hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 75% 40%,rgba(26,92,122,.08) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 20% 80%,rgba(201,147,58,.07) 0%,transparent 60%);pointer-events:none;}
+    .hero-badge{display:inline-block;background:rgba(201,147,58,.12);color:var(--gold);font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;margin-bottom:1.5rem;animation:fadeUp .8s ease both;}
+    .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,4.2rem);line-height:1.1;color:var(--dark);animation:fadeUp .8s .1s ease both;}
+    .hero-title em{color:var(--ocean);font-style:italic;}
+    .hero-sub{margin-top:1.4rem;font-size:1.05rem;font-weight:300;color:var(--muted);line-height:1.7;max-width:430px;animation:fadeUp .8s .2s ease both;}
+    .hero-actions{margin-top:2.4rem;display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .8s .3s ease both;}
+    .btn-primary{background:var(--ocean);color:#fff;padding:.85rem 2rem;border-radius:50px;text-decoration:none;font-weight:500;font-size:.95rem;transition:background .25s,transform .2s;box-shadow:0 8px 24px rgba(26,92,122,.25);}
+    .btn-primary:hover{background:var(--sky);transform:translateY(-2px);}
+    .btn-secondary{border:1.5px solid var(--ocean);color:var(--ocean);padding:.85rem 2rem;border-radius:50px;text-decoration:none;font-weight:500;font-size:.95rem;transition:all .25s;}
+    .btn-secondary:hover{background:var(--ocean);color:#fff;}
+    .hero-visual{position:relative;animation:fadeUp .8s .15s ease both;}
+    .hero-card{background:var(--ocean);border-radius:2rem;padding:3rem 2.5rem;color:#fff;position:relative;overflow:hidden;box-shadow:0 32px 64px rgba(26,92,122,.3);}
+    .hero-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:rgba(255,255,255,.05);border-radius:50%;}
+    .hero-card::after{content:'';position:absolute;bottom:-60px;left:-30px;width:250px;height:250px;background:rgba(201,147,58,.12);border-radius:50%;}
+    .card-icon{font-size:3rem;margin-bottom:1.2rem;}
+    .card-name{font-family:'Playfair Display',serif;font-size:1.6rem;margin-bottom:.4rem;}
+    .card-title-text{font-size:.9rem;opacity:.7;margin-bottom:2rem;}
+    .card-stats{display:flex;gap:2rem;position:relative;z-index:1;}
+    .stat-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);}
+    .stat-label{font-size:.78rem;opacity:.7;margin-top:.1rem;}
+    .floating-pill{position:absolute;background:#fff;border-radius:50px;padding:.6rem 1.2rem;font-size:.8rem;font-weight:500;color:var(--ocean);box-shadow:0 8px 24px rgba(0,0,0,.12);white-space:nowrap;animation:float 3s ease-in-out infinite;}
+    .pill-1{top:-1rem;right:2rem;animation-delay:0s;}
+    .pill-2{bottom:2rem;left:-2rem;animation-delay:1.5s;}
+    #servicii{padding:6rem 6vw;background:var(--sand);}
+    .section-label{font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--dark);margin-bottom:1rem;}
+    .section-sub{color:var(--muted);font-size:1rem;max-width:520px;line-height:1.7;margin-bottom:3rem;}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+    .service-card{background:var(--cream);border-radius:1.4rem;padding:2.2rem;border:1px solid rgba(201,147,58,.1);transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
+    .service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ocean),var(--sky));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+    .service-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(26,92,122,.12);}
+    .service-card:hover::after{transform:scaleX(1);}
+    .service-icon{font-size:2.4rem;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:center;background:rgba(26,92,122,.08);width:60px;height:60px;border-radius:14px;}
+    .service-name{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--dark);margin-bottom:.6rem;}
+    .service-desc{color:var(--muted);font-size:.9rem;line-height:1.6;}
+    .service-items{margin-top:1.2rem;list-style:none;}
+    .service-items li{font-size:.85rem;color:var(--text);padding:.35rem 0;border-bottom:1px dashed rgba(0,0,0,.06);display:flex;align-items:center;gap:.5rem;}
+    .service-items li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;}
+    #despre{padding:6rem 6vw;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+    .despre-bg{background:linear-gradient(135deg,var(--ocean),var(--sky));border-radius:2rem;padding:3rem;color:#fff;box-shadow:0 32px 64px rgba(26,92,122,.25);}
+    .despre-bg h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:2rem;}
+    .features-list{list-style:none;display:flex;flex-direction:column;gap:1rem;}
+    .features-list li{display:flex;align-items:flex-start;gap:1rem;font-size:.92rem;line-height:1.5;}
+    .feat-icon{width:36px;height:36px;flex-shrink:0;background:rgba(255,255,255,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+    .accent-box{position:absolute;bottom:-1.5rem;right:-1.5rem;background:var(--gold);color:#fff;border-radius:1rem;padding:1.2rem 1.8rem;font-family:'Playfair Display',serif;font-size:1.6rem;box-shadow:0 12px 32px rgba(201,147,58,.4);}
+    .accent-box small{display:block;font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:300;opacity:.85;}
+    #contact{padding:6rem 6vw;background:var(--dark);color:#fff;}
+    .contact-inner{max-width:700px;margin:0 auto;text-align:center;}
+    .contact-inner .section-label{color:var(--gold);}
+    .contact-inner .section-title{color:#fff;}
+    .contact-inner .section-sub{color:rgba(255,255,255,.55);margin-left:auto;margin-right:auto;}
+    .contact-cards{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem;}
+    .contact-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:1.2rem;padding:1.6rem 2rem;min-width:200px;transition:background .25s;}
+    .contact-card:hover{background:rgba(255,255,255,.1);}
+    .contact-card .ci{font-size:1.8rem;margin-bottom:.8rem;}
+    .contact-card .cl{font-size:.75rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem;}
+    .contact-card .cv{font-size:1rem;font-weight:500;}
+    .contact-card a{color:#fff;text-decoration:none;}
+    .contact-card a:hover{color:var(--gold);}
+    footer{padding:2rem 6vw;background:var(--dark);border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+    footer .logo{font-family:'Playfair Display',serif;color:rgba(255,255,255,.5);font-size:.95rem;}
+    footer .logo span{color:var(--gold);font-style:italic;}
+    footer small{color:rgba(255,255,255,.3);font-size:.8rem;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+    @media(max-width:768px){#hero{grid-template-columns:1fr;padding-top:7rem;}.hero-visual{order:-1;}.pill-2{display:none;}#despre{grid-template-columns:1fr;gap:3rem;}.accent-box{position:static;margin-top:1rem;display:inline-block;}nav .nav-links{display:none;}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Agentul<span>DeVacante</span></div>
+  <ul class="nav-links">
+    <li><a href="#servicii">Servicii</a></li>
+    <li><a href="#despre">Despre</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+<section id="hero">
+  <div class="hero-text">
+    <div class="hero-badge">🌍 Broker de Asigurări & Vacanțe</div>
+    <h1 class="hero-title">Protecție, <em>liniște</em><br/>și vacanțe de neuitat.</h1>
+    <p class="hero-sub">Stoica Robert – broker independent cu experiență în asigurări și pachete turistice personalizate. Te ajut să faci alegerea potrivită pentru tine și familia ta.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">📞 Contactează-mă</a>
+      <a href="#servicii" class="btn-secondary">Vezi serviciile</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="floating-pill pill-1">✈️ Pachete All-Inclusive</div>
+    <div class="hero-card">
+      <div class="card-icon">🤝</div>
+      <div class="card-name">Stoica Robert</div>
+      <div class="card-title-text">Broker de Asigurări & Turism</div>
+      <div class="card-stats">
+        <div><div class="stat-num">3+</div><div class="stat-label">Ani experiență</div></div>
+        <div><div class="stat-num">100%</div><div class="stat-label">Dedicat clienților</div></div>
+      </div>
+    </div>
+    <div class="floating-pill pill-2">🛡️ Asigurare de Viață</div>
+  </div>
+</section>
+<section id="servicii">
+  <div class="section-label">Ce ofer</div>
+  <h2 class="section-title">Servicii complete,<br/>soluții personalizate</h2>
+  <p class="section-sub">Indiferent că vrei să îți protejezi familia, mașina sau să pleci în vacanță, am soluția potrivită pentru tine.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">❤️</div>
+      <div class="service-name">Asigurare de Viață</div>
+      <p class="service-desc">Protejează-ți familia cu o asigurare de viață adaptată nevoilor și bugetului tău.</p>
+      <ul class="service-items">
+        <li>Asigurare de viață cu economisire</li>
+        <li>Asigurare de deces și invaliditate</li>
+        <li>Asigurare medicală complementară</li>
+        <li>Planuri flexibile pe termen lung</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🚗</div>
+      <div class="service-name">Asigurare Auto</div>
+      <p class="service-desc">RCA, CASCO și alte protecții auto – îți găsesc cea mai bună ofertă de pe piață.</p>
+      <ul class="service-items">
+        <li>RCA – obligatorie și avantajoasă</li>
+        <li>CASCO complet sau parțial</li>
+        <li>Asistență rutieră inclusă</li>
+        <li>Comparare oferte de la mai mulți asigurători</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✈️</div>
+      <div class="service-name">Pachete Turistice</div>
+      <p class="service-desc">Vacanțe all-inclusive, city break-uri sau sejururi de vis – planific totul pentru tine.</p>
+      <ul class="service-items">
+        <li>All-inclusive Turcia, Grecia, Egipt</li>
+        <li>Vacanțe în familie cu activități copii</li>
+        <li>City break-uri în Europa</li>
+        <li>Asigurare de călătorie inclusă</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="despre">
+  <div class="despre-visual" style="position:relative;">
+    <div class="despre-bg">
+      <h3>De ce să lucrezi cu mine?</h3>
+      <ul class="features-list">
+        <li><div class="feat-icon">🎯</div><div><strong>Consiliere personalizată</strong><br/><span style="opacity:.75;font-size:.88rem;">Analizez nevoile tale și îți ofer soluția optimă, nu cea mai scumpă.</span></div></li>
+        <li><div class="feat-icon">⚡</div><div><strong>Răspuns rapid</strong><br/><span style="opacity:.75;font-size:.88rem;">Obții ofertă în aceeași zi – fără birocracție și fără pierdere de timp.</span></div></li>
+        <li><div class="feat-icon">🔒</div><div><strong>Transparență totală</strong><br/><span style="opacity:.75;font-size:.88rem;">Explic clauzele importante, fără surprize neplăcute la daune.</span></div></li>
+        <li><div class="feat-icon">🌍</div><div><strong>Vacanțe & asigurări sub același acoperiș</strong><br/><span style="opacity:.75;font-size:.88rem;">Economisești timp – rezolvi totul cu un singur apel.</span></div></li>
+      </ul>
+    </div>
+    <div class="accent-box">100%<small>Satisfacție garantată</small></div>
+  </div>
+  <div class="despre-content">
+    <div class="section-label">Despre mine</div>
+    <h2 class="section-title">Stoica Robert – brokerul tău de încredere</h2>
+    <p style="color:var(--muted);line-height:1.8;margin-top:1rem;">Mă ocup de asigurări și turism cu pasiune și profesionalism. Scopul meu este simplu: să îți ofer protecția potrivită și vacanța visată, la prețul corect.</p>
+    <p style="color:var(--muted);line-height:1.8;margin-top:1rem;">Lucrez independent, ceea ce înseamnă că nu sunt legat de un singur asigurător – compar piața și îți aduc cele mai bune oferte disponibile.</p>
+    <a href="tel:0763732210" class="btn-primary" style="display:inline-flex;align-items:center;gap:.5rem;margin-top:2rem;">📞 Sună acum</a>
+  </div>
+</section>
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label">Hai să vorbim</div>
+    <h2 class="section-title">Contactează-mă</h2>
+    <p class="section-sub">Un apel sau un mesaj este tot ce îți trebuie pentru a primi o ofertă personalizată gratuit.</p>
+    <div class="contact-cards">
+      <div class="contact-card"><div class="ci">📱</div><div class="cl">Telefon</div><div class="cv"><a href="tel:0763732210">0763 732 210</a></div></div>
+      <div class="contact-card"><div class="ci">💬</div><div class="cl">WhatsApp</div><div class="cv"><a href="https://wa.me/40763732210" target="_blank">Scrie-mi acum</a></div></div>
+      <div class="contact-card"><div class="ci">🌍</div><div class="cl">Locație</div><div class="cv">România</div></div>
+    </div>
+    <a href="tel:0763732210" class="btn-primary" style="display:inline-block;margin-top:2.5rem;font-size:1rem;padding:1rem 2.5rem;">📞 Sună gratuit acum</a>
+  </div>
+</section>
+<footer>
+  <div class="logo">Agentul<span>DeVacante</span> · Stoica Robert</div>
+  <small>© 2026 AgentulDeVacante · Broker independent de asigurări și turism</small>
+</footer>
+</body>
+</html>
