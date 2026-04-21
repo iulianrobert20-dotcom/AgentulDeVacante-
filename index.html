@@ -16,6 +16,10 @@
   <meta property="og:type" content="website"/>
   <meta property="og:locale" content="ro_RO"/>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"AgentulDeVacante – Stoica Robert","description":"Broker independent de asigurări și pachete turistice în Craiova","url":"https://agentuldevacante.ro","telephone":"+40763732210","address":{"@type":"PostalAddress","addressLocality":"Craiova","addressRegion":"Dolj","addressCountry":"RO"},"geo":{"@type":"GeoCoordinates","latitude":44.3302,"longitude":23.7949},"openingHours":"Mo-Fr 09:00-18:00","priceRange":"$$","serviceArea":"Craiova, Dolj, România"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Asigurări Auto RCA","provider":{"@type":"LocalBusiness","name":"AgentulDeVacante – Stoica Robert"},"areaServed":["Craiova","Dolj","Oltenia"],"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Asigurări CASCO","provider":{"@type":"LocalBusiness","name":"AgentulDeVacante – Stoica Robert"},"areaServed":["Craiova","Dolj","Oltenia"],"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Asigurări de Viață","provider":{"@type":"LocalBusiness","name":"AgentulDeVacante – Stoica Robert"},"areaServed":["Craiova","Dolj","Oltenia"],"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Pachete Turistice","provider":{"@type":"LocalBusiness","name":"AgentulDeVacante – Stoica Robert"},"areaServed":["Craiova","Dolj","Oltenia","România"],"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}</script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -125,6 +129,28 @@
       font-size: .8rem; color: rgba(255,255,255,.45);
     }
     .trust-pill span { color: var(--success); }
+    .proof-badges {
+      display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;
+      margin-top: 1.5rem;
+      animation: fadeUp .7s .28s ease both;
+    }
+    .proof-badge {
+      display: flex; align-items: center; gap: .5rem;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: .5rem .9rem; border-radius: 50px;
+      font-size: .78rem; color: rgba(255,255,255,.7);
+      transition: all .25s;
+    }
+    .proof-badge:hover {
+      background: rgba(255,255,255,.09);
+      border-color: rgba(201,147,58,.3);
+      transform: translateY(-2px);
+    }
+    .proof-badge .badge-icon {
+      font-size: .9rem;
+      filter: grayscale(0);
+    }
     .hero-actions {
       margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;
       animation: fadeUp .7s .3s ease both;
@@ -554,6 +580,24 @@
       <div class="trust-pill"><span>✓</span> Răspuns în aceeași zi</div>
       <div class="trust-pill"><span>✓</span> Fără obligații</div>
     </div>
+    <div class="proof-badges">
+      <div class="proof-badge">
+        <span class="badge-icon">✅</span>
+        <span>Autorizat ASF</span>
+      </div>
+      <div class="proof-badge">
+        <span class="badge-icon">📞</span>
+        <span>Răspuns &lt; 2 ore</span>
+      </div>
+      <div class="proof-badge">
+        <span class="badge-icon">🔒</span>
+        <span>Date protejate GDPR</span>
+      </div>
+      <div class="proof-badge">
+        <span class="badge-icon">⭐</span>
+        <span>4.9/5 din 47 recenzii</span>
+      </div>
+    </div>
     <div class="hero-actions">
       <a href="tel:0763732210" class="btn-primary">📞 Sună acum</a>
       <a href="#calculatoare" class="btn-outline">🧮 Calculează RCA</a>
@@ -737,20 +781,24 @@
       <p class="calc-card-desc">Introdu datele mașinii și află prețul estimativ RCA de la 8+ asigurători în câteva secunde.</p>
       <span class="calc-card-btn">Calculează acum →</span>
     </a>
-    <div class="calc-card calc-soon">
-      <div class="soon-badge">În curând</div>
+    <a href="calculator-casco.html" class="calc-card">
       <div class="calc-card-icon">🛡️</div>
       <div class="calc-card-name">Calculator CASCO</div>
       <p class="calc-card-desc">Estimare prima CASCO în funcție de marca, valoarea și vârsta mașinii tale.</p>
-      <span class="calc-card-btn" style="background:var(--muted)">Disponibil curând</span>
-    </div>
-    <div class="calc-card calc-soon">
-      <div class="soon-badge">În curând</div>
+      <span class="calc-card-btn">Calculează acum →</span>
+    </a>
+    <a href="calculator-locuinta.html" class="calc-card">
       <div class="calc-card-icon">🏠</div>
       <div class="calc-card-name">Calculator Locuință</div>
       <p class="calc-card-desc">Află cât costă asigurarea casei tale în funcție de suprafață și tip de construcție.</p>
-      <span class="calc-card-btn" style="background:var(--muted)">Disponibil curând</span>
-    </div>
+      <span class="calc-card-btn">Calculează acum →</span>
+    </a>
+    <a href="calculator-viata-malpraxis.html" class="calc-card">
+      <div class="calc-card-icon">❤️</div>
+      <div class="calc-card-name">Calculator Viață & Malpraxis</div>
+      <p class="calc-card-desc">Estimare asigurare de viață și asigurare malpraxis pentru medici și specialiști.</p>
+      <span class="calc-card-btn">Calculează acum →</span>
+    </a>
   </div>
 </section>
 
