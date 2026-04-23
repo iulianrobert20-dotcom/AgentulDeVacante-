@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E180CSG8CC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E180CSG8CC');
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="canonical" href="https://agentuldevacante.ro/calculator-viata-malpraxis.html"/>
+  <title>Calculator Asigurare de Viață & Malpraxis | AgentulDeVacante</title>
+  <meta name="description" content="Calculează prețul asigurării de viață și malpraxis online gratuit. Broker Stoica Robert Craiova."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--ocean:#1a5c7a;--sky:#2e8fb5;--gold:#c9933a;--dark:#14232e;--muted:#7a8f99;--success:#2d9e6b;--white:#ffffff}
+    body{font-family:'DM Sans',sans-serif;background:var(--dark);overflow-x:hidden;min-height:100vh}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 6vw;background:rgba(20,35,46,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,147,58,.2)}
+    .nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);text-decoration:none}
+    .nav-logo span{color:var(--gold);font-style:italic}
+    .nav-back{color:rgba(255,255,255,.6);text-decoration:none;font-size:.85rem;transition:color .2s}
+    .nav-back:hover{color:var(--gold)}
+
+    /* TABS */
+    .tabs-hero{padding:7rem 6vw 0;text-align:center;position:relative}
+    .tabs-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(26,92,122,.3) 0%,transparent 70%);pointer-events:none}
+    .tabs-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--white);margin-bottom:2rem;animation:fadeUp .6s ease both}
+    .tabs-hero h1 em{color:var(--gold);font-style:italic}
+    .tab-switcher{display:inline-flex;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:.3rem;gap:.3rem;margin-bottom:0;position:relative;z-index:1;animation:fadeUp .6s .1s ease both}
+    .tab-btn{padding:.7rem 2rem;border-radius:50px;border:none;background:transparent;color:rgba(255,255,255,.5);font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;cursor:pointer;transition:all .25s}
+    .tab-btn.active{background:var(--gold);color:var(--dark);}
+
+    .calc-section{display:none;padding:2rem 6vw 5rem}
+    .calc-section.active{display:block;animation:fadeIn .4s ease}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+    .calc-inner{max-width:640px;margin:0 auto}
+    .section-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,147,58,.12);border:1px solid rgba(201,147,58,.25);color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.2rem;border-radius:50px;margin-bottom:1.5rem}
+    .section-title{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--white);margin-bottom:.5rem}
+    .section-sub{color:rgba(255,255,255,.45);font-size:.9rem;line-height:1.6;margin-bottom:2rem}
+
+    .calc-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:1.6rem;padding:2.5rem}
+    .field{margin-bottom:1.2rem}
+    .field label{display:block;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.6);margin-bottom:.5rem;letter-spacing:.04em;text-transform:uppercase}
+    .field select,.field input{width:100%;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:.8rem;padding:.9rem 1.1rem;color:var(--white);font-size:.95rem;font-family:'DM Sans',sans-serif;transition:border .2s;appearance:none}
+    .field select:focus,.field input:focus{outline:none;border-color:var(--gold)}
+    .field select option{background:var(--dark)}
+    .fields-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .slider-wrap{margin-bottom:1.5rem}
+    .slider-wrap label{display:block;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.6);margin-bottom:.8rem;letter-spacing:.04em;text-transform:uppercase}
+    .slider-val{color:var(--gold);font-weight:600}
+    input[type=range]{width:100%;height:4px;background:rgba(255,255,255,.1);border-radius:4px;outline:none;appearance:none;cursor:pointer}
+    input[type=range]::-webkit-slider-thumb{appearance:none;width:20px;height:20px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 0 0 4px rgba(201,147,58,.2)}
+    .slider-labels{display:flex;justify-content:space-between;font-size:.72rem;color:rgba(255,255,255,.3);margin-top:.5rem}
+    .toggle-row{display:flex;gap:.8rem;margin-bottom:1.2rem;flex-wrap:wrap}
+    .toggle-btn{flex:1;min-width:100px;padding:.85rem .5rem;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:.8rem;color:rgba(255,255,255,.5);font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:500;cursor:pointer;text-align:center;transition:all .2s}
+    .toggle-btn.selected{border-color:var(--gold);background:rgba(201,147,58,.12);color:var(--white)}
+    .options-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.5rem}
+    .option-btn{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:1rem;padding:1rem .8rem;cursor:pointer;text-align:center;transition:all .2s;font-family:'DM Sans',sans-serif}
+    .option-btn:hover{border-color:rgba(201,147,58,.4);background:rgba(201,147,58,.05)}
+    .option-btn.selected{border-color:var(--gold);background:rgba(201,147,58,.12)}
+    .option-icon{font-size:1.6rem;margin-bottom:.4rem;display:block}
+    .option-label{font-size:.82rem;font-weight:500;color:var(--white)}
+    .option-sub{font-size:.7rem;color:rgba(255,255,255,.4);margin-top:.2rem}
+    .btn-calc{width:100%;background:linear-gradient(135deg,var(--ocean),var(--sky));color:white;border:none;padding:1rem;border-radius:.9rem;font-size:1rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 24px rgba(26,92,122,.3);margin-top:.5rem}
+    .btn-calc:hover{transform:translateY(-2px)}
+    .result-box{display:none;margin-top:1.5rem}
+    .result-box.show{display:block;animation:fadeIn .4s ease}
+    .result-card{background:linear-gradient(135deg,rgba(26,92,122,.3),rgba(46,143,181,.2));border:1px solid rgba(46,143,181,.3);border-radius:1.2rem;padding:2rem;text-align:center;margin-bottom:1.2rem}
+    .result-label{font-size:.8rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
+    .result-price{font-family:'Playfair Display',serif;font-size:3rem;color:var(--white);line-height:1}
+    .result-price span{font-size:1.3rem;color:var(--gold)}
+    .result-range{font-size:.82rem;color:rgba(255,255,255,.4);margin-top:.5rem}
+    .result-disclaimer{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:.8rem;line-height:1.6}
+    .asig-list{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:1rem 0}
+    .asig-badge{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:.3rem .9rem;font-size:.75rem;color:rgba(255,255,255,.6)}
+    .btn-wa{width:100%;background:#25d366;color:white;border:none;border-radius:.9rem;padding:1.1rem;font-size:1rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:.6rem;text-decoration:none;margin-bottom:.8rem;transition:transform .2s}
+    .btn-wa:hover{transform:translateY(-2px)}
+    .btn-call{width:100%;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);color:white;border-radius:.9rem;padding:1rem;font-size:.95rem;font-weight:500;display:flex;align-items:center;justify-content:center;gap:.6rem;text-decoration:none;transition:background .2s}
+    .btn-call:hover{background:rgba(255,255,255,.1)}
+    .trust-row{display:flex;gap:1rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap}
+    .trust-item{font-size:.78rem;color:rgba(255,255,255,.35)}
+    .float-wa{position:fixed;bottom:2rem;right:2rem;z-index:999;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.4);animation:float 3s ease-in-out infinite}
+    footer{padding:2rem 6vw;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    footer .logo{font-family:'Playfair Display',serif;color:rgba(255,255,255,.4);font-size:.9rem}
+    footer .logo span{color:var(--gold);font-style:italic}
+    footer small{color:rgba(255,255,255,.2);font-size:.78rem}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    @media(max-width:600px){.fields-row{grid-template-columns:1fr}.tab-btn{padding:.6rem 1.2rem;font-size:.82rem}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Agentul<span>DeVacante</span></a>
+  <a href="index.html" class="nav-back">← Înapoi la site</a>
+</nav>
+
+<div class="tabs-hero">
+  <h1>Calculator <em>Asigurări</em><br/>de Viață & Malpraxis</h1>
+  <div class="tab-switcher">
+    <button class="tab-btn active" onclick="switchTab('viata',this)">❤️ Asigurare de Viață</button>
+    <button class="tab-btn" onclick="switchTab('malpraxis',this)">🩺 Malpraxis</button>
+  </div>
+</div>
+
+<!-- ====== VIATA ====== -->
+<div class="calc-section active" id="tab-viata">
+  <div class="calc-inner">
+    <div class="section-badge">❤️ Calculator Asigurare de Viață</div>
+    <div class="section-title">Protecție pentru cei dragi</div>
+    <div class="section-sub">Completează datele de mai jos pentru o estimare a primei lunare de asigurare de viață.</div>
+
+    <div class="calc-card">
+      <div class="fields-row">
+        <div class="field">
+          <label>Vârsta ta</label>
+          <select id="v-varsta">
+            <option value="25">18–25 ani</option>
+            <option value="30">26–30 ani</option>
+            <option value="35" selected>31–35 ani</option>
+            <option value="40">36–40 ani</option>
+            <option value="45">41–45 ani</option>
+            <option value="50">46–50 ani</option>
+            <option value="55">51–55 ani</option>
+            <option value="60">56–60 ani</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Genul</label>
+          <div class="toggle-row" style="margin-bottom:0">
+            <button class="toggle-btn selected" onclick="selectToggle2(this,'v-gen','m')">👨 Masculin</button>
+            <button class="toggle-btn" onclick="selectToggle2(this,'v-gen','f')">👩 Feminin</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Tipul asigurării</label>
+        <div class="options-grid">
+          <button class="option-btn" onclick="selectOption2(this,'v-tip','termen')"><span class="option-icon">📅</span><div class="option-label">Termen fix</div><div class="option-sub">10, 20, 30 ani</div></button>
+          <button class="option-btn" onclick="selectOption2(this,'v-tip','economisire')"><span class="option-icon">💰</span><div class="option-label">Cu economisire</div><div class="option-sub">+ component investiție</div></button>
+          <button class="option-btn" onclick="selectOption2(this,'v-tip','mixta')"><span class="option-icon">🔄</span><div class="option-label">Mixtă</div><div class="option-sub">deces + supraviețuire</div></button>
+          <button class="option-btn" onclick="selectOption2(this,'v-tip','unit')"><span class="option-icon">📈</span><div class="option-label">Unit-linked</div><div class="option-sub">legată de investiții</div></button>
+        </div>
+      </div>
+
+      <div class="slider-wrap">
+        <label>Suma asigurată dorită: <span class="slider-val" id="v-suma">100.000</span> EUR</label>
+        <input type="range" min="10000" max="500000" step="5000" value="100000" oninput="document.getElementById('v-suma').textContent=Number(this.value).toLocaleString('ro')"/>
+        <div class="slider-labels"><span>10.000 EUR</span><span>250.000 EUR</span><span>500.000 EUR</span></div>
+      </div>
+
+      <div class="field">
+        <label>Durata asigurării</label>
+        <div class="toggle-row">
+          <button class="toggle-btn" onclick="selectToggle2(this,'v-durata','10')">10 ani</button>
+          <button class="toggle-btn selected" onclick="selectToggle2(this,'v-durata','20')">20 ani</button>
+          <button class="toggle-btn" onclick="selectToggle2(this,'v-durata','30')">30 ani</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Starea de sănătate</label>
+        <select id="v-sanatate">
+          <option value="buna">Bună – fără afecțiuni cronice</option>
+          <option value="medie">Medie – afecțiuni minore controlate</option>
+          <option value="fumator">Fumător</option>
+          <option value="cronice">Afecțiuni cronice</option>
+        </select>
+      </div>
+
+      <button class="btn-calc" onclick="calcViata()">🔍 Calculează prima lunară</button>
+
+      <div class="result-box" id="v-result">
+        <div class="result-card">
+          <div class="result-label">Primă lunară estimativă</div>
+          <div class="result-price" id="v-pret">— <span>RON/lună</span></div>
+          <div class="result-range" id="v-range">interval orientativ</div>
+          <div class="result-disclaimer">⚠️ Estimare orientativă. Prețul exact depinde de asigurător și analiza medicală completă.</div>
+        </div>
+        <div style="text-align:center;margin-bottom:1rem">
+          <div style="font-size:.82rem;color:rgba(255,255,255,.4);margin-bottom:.8rem">Comparăm oferte de la:</div>
+          <div class="asig-list">
+            <span class="asig-badge">Allianz</span><span class="asig-badge">Generali</span>
+            <span class="asig-badge">Eurolife</span><span class="asig-badge">Asirom</span>
+            <span class="asig-badge">Signal Iduna</span><span class="asig-badge">Metropolitan</span>
+          </div>
+        </div>
+        <a id="v-wa" href="#" target="_blank" class="btn-wa">💬 Vreau oferta exactă pe WhatsApp</a>
+        <a href="tel:0763732210" class="btn-call">📞 Sună acum – 0763 732 210</a>
+        <div class="trust-row">
+          <div class="trust-item">✅ Consultație gratuită</div>
+          <div class="trust-item">⚡ Răspuns în aceeași zi</div>
+          <div class="trust-item">🔒 Fără obligații</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== MALPRAXIS ====== -->
+<div class="calc-section" id="tab-malpraxis">
+  <div class="calc-inner">
+    <div class="section-badge">🩺 Calculator Asigurare Malpraxis</div>
+    <div class="section-title">Protecție pentru profesioniști din sănătate</div>
+    <div class="section-sub">Estimare rapidă pentru asigurarea de răspundere civilă medicală – malpraxis.</div>
+
+    <div class="calc-card">
+      <div class="field">
+        <label>Specialitatea medicală</label>
+        <div class="options-grid">
+          <button class="option-btn" onclick="selectOption2(this,'m-spec','medic-generalist')"><span class="option-icon">👨‍⚕️</span><div class="option-label">Medic generalist</div><div class="option-sub">medicină de familie</div></button>
+          <button class="option-btn" onclick="selectOption2(this,'m-spec','chirurg')"><span class="option-icon">🔪</span><div class="option-label">Chirurg</div><div class="option-sub">chirurgie generală</div></button>
+          <button class="option-btn" onclick="selectOption2(this,'m-spec','specialist')"><span class="option-icon">🏥</span><div class="option-label">Medic specialist</div><div class="option-sub">cardiolog, neurolog etc.</div></button>
+          <button class="option-btn" onclick="selectOption2(this,'m-spec','stomatolog')"><span class="option-icon">🦷</span><div class="option-label">Stomatolog</div><div class="option-sub">medicină dentară</div></button>
+          <button class="option-btn" onclick="selectOption2(this,'m-spec','asistent')"><span class="option-icon">💉</span><div class="option-label">Asistent medical</div><div class="option-sub">asistență medicală</div></button>
+          <button class="option-btn" onclick="selectOption2(this,'m-spec','farmacist')"><span class="option-icon">💊</span><div class="option-label">Farmacist</div><div class="option-sub">farmacie</div></button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Tipul activității</label>
+        <div class="toggle-row">
+          <button class="toggle-btn selected" onclick="selectToggle2(this,'m-tip','angajat')">🏢 Angajat spital/clinică</button>
+          <button class="toggle-btn" onclick="selectToggle2(this,'m-tip','privat')">🏠 Cabinet privat</button>
+          <button class="toggle-btn" onclick="selectToggle2(this,'m-tip','ambele')">🔄 Ambele</button>
+        </div>
+      </div>
+
+      <div class="slider-wrap">
+        <label>Limita de acoperire dorită: <span class="slider-val" id="m-limita">200.000</span> EUR</label>
+        <input type="range" min="50000" max="1000000" step="50000" value="200000" oninput="document.getElementById('m-limita').textContent=Number(this.value).toLocaleString('ro')"/>
+        <div class="slider-labels"><span>50.000 EUR</span><span>500.000 EUR</span><span>1.000.000 EUR</span></div>
+      </div>
+
+      <div class="field">
+        <label>Ani de experiență</label>
+        <select id="m-exp">
+          <option value="1">Sub 2 ani</option>
+          <option value="2">2–5 ani</option>
+          <option value="5" selected>5–10 ani</option>
+          <option value="10">Peste 10 ani</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Ai avut reclamații sau daune în ultimii 5 ani?</label>
+        <div class="toggle-row">
+          <button class="toggle-btn selected" onclick="selectToggle2(this,'m-daune','nu')">✅ Nu</button>
+          <button class="toggle-btn" onclick="selectToggle2(this,'m-daune','da')">⚠️ Da</button>
+        </div>
+      </div>
+
+      <button class="btn-calc" onclick="calcMalpraxis()">🔍 Calculează prima anuală</button>
+
+      <div class="result-box" id="m-result">
+        <div class="result-card">
+          <div class="result-label">Primă anuală estimativă</div>
+          <div class="result-price" id="m-pret">— <span>RON/an</span></div>
+          <div class="result-range" id="m-range">interval orientativ</div>
+          <div class="result-disclaimer">⚠️ Estimare orientativă. Prețul exact depinde de asigurător, specialitate și istoricul complet.</div>
+        </div>
+        <div style="text-align:center;margin-bottom:1rem">
+          <div style="font-size:.82rem;color:rgba(255,255,255,.4);margin-bottom:.8rem">Comparăm oferte de la:</div>
+          <div class="asig-list">
+            <span class="asig-badge">Allianz</span><span class="asig-badge">ABC Asigurări</span>
+            <span class="asig-badge">Asirom</span><span class="asig-badge">Garanta</span>
+            <span class="asig-badge">Signal Iduna</span><span class="asig-badge">Uniqa</span>
+          </div>
+        </div>
+        <a id="m-wa" href="#" target="_blank" class="btn-wa">💬 Vreau oferta exactă pe WhatsApp</a>
+        <a href="tel:0763732210" class="btn-call">📞 Sună acum – 0763 732 210</a>
+        <div class="trust-row">
+          <div class="trust-item">✅ Consultație gratuită</div>
+          <div class="trust-item">⚡ Răspuns în aceeași zi</div>
+          <div class="trust-item">🔒 Fără obligații</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a href="https://wa.me/40763732210" target="_blank" class="float-wa">💬</a>
+<footer>
+  <div class="logo">Agentul<span>DeVacante</span> · Stoica Robert</div>
+  <small>© 2026 · Broker independent asigurări Craiova</small>
+</footer>
+
+<script>
+  // Tab switching
+  function switchTab(tab,btn){
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.calc-section').forEach(s=>s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-'+tab).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  // State
+  const state={'v-gen':'m','v-tip':'','v-durata':'20','v-sanatate':'buna','m-spec':'','m-tip':'angajat','m-daune':'nu'};
+
+  function selectOption2(btn,f,v){
+    btn.closest('.options-grid').querySelectorAll('.option-btn').forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected');state[f]=v;
+  }
+  function selectToggle2(btn,f,v){
+    btn.closest('.toggle-row').querySelectorAll('.toggle-btn').forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected');state[f]=v;
+  }
+
+  // CALCULATOR VIATA
+  function calcViata(){
+    const varsta=parseInt(document.getElementById('v-varsta').value)||35;
+    const suma=parseInt(document.querySelector('#tab-viata input[type=range]').value)||100000;
+    const sanatate=document.getElementById('v-sanatate').value||'buna';
+    const tip=state['v-tip']||'termen';
+    const durata=parseInt(state['v-durata'])||20;
+    const gen=state['v-gen']||'m';
+
+    // Rata lunara ca % din suma asigurata
+    let rataLuna=0.00035;
+
+    // Factor varsta
+    if(varsta<=25)rataLuna*=0.7;
+    else if(varsta<=30)rataLuna*=0.85;
+    else if(varsta<=35)rataLuna*=1.0;
+    else if(varsta<=40)rataLuna*=1.2;
+    else if(varsta<=45)rataLuna*=1.5;
+    else if(varsta<=50)rataLuna*=1.9;
+    else if(varsta<=55)rataLuna*=2.4;
+    else rataLuna*=3.0;
+
+    // Factor gen
+    if(gen==='f')rataLuna*=0.85;
+
+    // Factor tip
+    const tipF={termen:1,economisire:1.8,mixta:1.4,unit:1.6};
+    rataLuna*=(tipF[tip]||1);
+
+    // Factor durata
+    if(durata===10)rataLuna*=1.2;
+    else if(durata===20)rataLuna*=1.0;
+    else rataLuna*=0.85;
+
+    // Factor sanatate
+    const sanF={buna:1,medie:1.2,fumator:1.5,cronice:1.8};
+    rataLuna*=(sanF[sanatate]||1);
+
+    const pretEur=Math.round(suma*rataLuna*100)/100;
+    const pretRon=Math.round(pretEur*4.97*10)/10;
+    const minRon=Math.round(pretRon*0.8*10)/10;
+    const maxRon=Math.round(pretRon*1.3*10)/10;
+
+    document.getElementById('v-pret').innerHTML=pretRon.toFixed(0)+' <span>RON/lună</span>';
+    document.getElementById('v-range').textContent=`Interval: ${minRon.toFixed(0)} – ${maxRon.toFixed(0)} RON/lună (~${pretEur.toFixed(1)} EUR/lună)`;
+
+    const tipL={termen:'Termen fix',economisire:'Cu economisire',mixta:'Mixtă',unit:'Unit-linked'};
+    const msg=`Buna ziua! Am folosit calculatorul de asigurare de viata de pe agentuldevacante.ro.%0A%0A`+
+      `👤 Varsta: ${varsta} ani | Gen: ${gen==='m'?'Masculin':'Feminin'}%0A`+
+      `💰 Suma asigurata: ${suma.toLocaleString('ro')} EUR%0A`+
+      `📋 Tip: ${tipL[tip]||'Termen fix'}%0A`+
+      `⏱️ Durata: ${durata} ani%0A`+
+      `🏥 Sanatate: ${sanatate}%0A%0A`+
+      `Estimare: ~${pretRon.toFixed(0)} RON/luna%0AAs dori o oferta exacta. Multumesc!`;
+    document.getElementById('v-wa').href=`https://wa.me/40763732210?text=${msg}`;
+    document.getElementById('v-result').classList.add('show');
+    document.getElementById('v-result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  // CALCULATOR MALPRAXIS
+  function calcMalpraxis(){
+    const spec=state['m-spec']||'medic-generalist';
+    const tip=state['m-tip']||'angajat';
+    const daune=state['m-daune']||'nu';
+    const limita=parseInt(document.getElementById('m-limita').value)||200000;
+    const exp=parseInt(document.getElementById('m-exp').value)||5;
+
+    let baza=400; // RON/an baza
+
+    // Factor specialitate
+    const specF={'medic-generalist':1,'chirurg':2.5,'specialist':1.8,'stomatolog':1.4,'asistent':0.6,'farmacist':0.7};
+    baza*=(specF[spec]||1);
+
+    // Factor tip activitate
+    const tipF={angajat:1,privat:1.4,ambele:1.7};
+    baza*=(tipF[tip]||1);
+
+    // Factor limita
+    baza*=(limita/200000)*0.7+0.65;
+
+    // Factor experienta
+    if(exp===1)baza*=1.2;
+    else if(exp===2)baza*=1.0;
+    else if(exp===5)baza*=0.9;
+    else baza*=0.85;
+
+    // Factor daune
+    if(daune==='da')baza*=1.8;
+
+    baza=Math.round(baza/50)*50;
+    const min=Math.round(baza*0.8/50)*50;
+    const max=Math.round(baza*1.3/50)*50;
+
+    document.getElementById('m-pret').innerHTML=baza.toLocaleString('ro')+' <span>RON/an</span>';
+    document.getElementById('m-range').textContent=`Interval: ${min.toLocaleString('ro')} – ${max.toLocaleString('ro')} RON/an`;
+
+    const specL={'medic-generalist':'Medic generalist','chirurg':'Chirurg','specialist':'Medic specialist','stomatolog':'Stomatolog','asistent':'Asistent medical','farmacist':'Farmacist'};
+    const msg=`Buna ziua! Am folosit calculatorul de malpraxis de pe agentuldevacante.ro.%0A%0A`+
+      `🩺 Specialitate: ${specL[spec]||'Medic'}%0A`+
+      `🏢 Tip activitate: ${tip}%0A`+
+      `💰 Limita acoperire: ${limita.toLocaleString('ro')} EUR%0A`+
+      `📊 Daune anterioare: ${daune==='nu'?'Nu':'Da'}%0A%0A`+
+      `Estimare: ~${baza.toLocaleString('ro')} RON/an%0AAs dori o oferta exacta. Multumesc!`;
+    document.getElementById('m-wa').href=`https://wa.me/40763732210?text=${msg}`;
+    document.getElementById('m-result').classList.add('show');
+    document.getElementById('m-result').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+</script>
+</body>
+</html>
