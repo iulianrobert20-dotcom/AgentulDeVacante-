@@ -42,7 +42,7 @@
 
     /* HERO */
     .page-hero {
-      padding: 7rem 6vw 3rem;
+      padding: 7rem 6vw 3.5rem;
       background: linear-gradient(135deg, var(--ocean), var(--sky));
       color: #fff;
       text-align: center;
@@ -56,115 +56,56 @@
       margin-bottom: 1.2rem;
     }
     .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: .8rem; }
-    .page-hero p { font-size: 1rem; opacity: .8; max-width: 500px; margin: 0 auto; }
+    .page-hero p { font-size: 1rem; opacity: .8; max-width: 520px; margin: 0 auto 1.5rem; }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .hero-actions a {
+      display: inline-flex; align-items: center; gap: .6rem;
+      padding: .7rem 1.5rem; border-radius: 50px;
+      text-decoration: none; font-weight: 500; font-size: .9rem;
+      transition: all .2s;
+    }
+    .btn-wa-hero { background: #25d366; color: #fff; }
+    .btn-wa-hero:hover { background: #1da851; }
+    .btn-insta-hero { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: #fff; }
+    .btn-insta-hero:hover { opacity: .9; }
 
-    /* FILTERS */
-    .filters {
-      padding: 2rem 6vw;
+    /* INFO STRIP */
+    .info-strip {
       background: var(--sand);
-      display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+      padding: 1.5rem 6vw;
+      display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;
     }
-    .filter-label { font-size: .85rem; font-weight: 600; color: var(--dark); }
-    .filter-btn {
-      padding: .5rem 1.2rem; border-radius: 50px;
-      border: 1.5px solid rgba(26,92,122,.2);
-      background: var(--cream); color: var(--text);
-      font-size: .85rem; cursor: pointer;
-      transition: all .2s; font-family: 'DM Sans', sans-serif;
-    }
-    .filter-btn:hover, .filter-btn.active { background: var(--ocean); color: #fff; border-color: var(--ocean); }
+    .info-item { display: flex; align-items: center; gap: .7rem; font-size: .9rem; color: var(--text); }
+    .info-item span:first-child { font-size: 1.3rem; }
 
-    /* OFFERS GRID */
-    .offers-section { padding: 3rem 6vw 5rem; }
-    .offers-count { font-size: .9rem; color: var(--muted); margin-bottom: 2rem; }
-    .offers-count span { color: var(--ocean); font-weight: 600; }
-    .offers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.8rem; }
-
-    /* OFFER CARD */
-    .offer-card {
-      background: #fff;
-      border-radius: 1.4rem;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(26,92,122,.08);
-      border: 1px solid rgba(201,147,58,.1);
-      transition: transform .3s, box-shadow .3s;
+    /* INSTAGRAM SECTION */
+    .instagram-section { padding: 4rem 6vw 5rem; background: var(--cream); }
+    .section-header { text-align: center; margin-bottom: 2.5rem; }
+    .section-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: #fff;
+      padding: .4rem 1.2rem; border-radius: 50px;
+      font-size: .78rem; letter-spacing: .08em; text-transform: uppercase;
+      font-weight: 600; margin-bottom: 1rem;
     }
-    .offer-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(26,92,122,.15); }
-
-    .card-img {
-      width: 100%; height: 200px;
-      background: linear-gradient(135deg, var(--ocean), var(--sky));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 4rem; position: relative; overflow: hidden;
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--dark); margin-bottom: .6rem;
     }
-    .card-img-bg {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, #1a5c7a, #2e8fb5);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 5rem; opacity: .3;
+    .section-header p { font-size: .95rem; color: var(--muted); max-width: 480px; margin: 0 auto; }
+    .behold-wrapper { max-width: 1100px; margin: 0 auto 2rem; }
+    .insta-cta { text-align: center; }
+    .insta-cta a {
+      display: inline-flex; align-items: center; gap: .5rem;
+      color: var(--ocean); font-weight: 600; font-size: .9rem;
+      text-decoration: none;
+      border: 1.5px solid var(--ocean);
+      padding: .65rem 1.5rem; border-radius: 50px;
+      transition: all .2s;
     }
-
-    .last-minute-badge {
-      position: absolute; top: 1rem; left: 1rem;
-      background: #e53e3e; color: #fff;
-      font-size: .72rem; font-weight: 700; letter-spacing: .06em;
-      text-transform: uppercase;
-      padding: .3rem .8rem; border-radius: 50px;
-    }
-    .stars-badge {
-      position: absolute; top: 1rem; right: 1rem;
-      background: rgba(0,0,0,.4); color: #ffd700;
-      font-size: .8rem; padding: .3rem .7rem; border-radius: 50px;
-    }
-
-    .card-body { padding: 1.5rem; }
-    .card-location { font-size: .8rem; color: var(--muted); margin-bottom: .4rem; display: flex; align-items: center; gap: .3rem; }
-    .card-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--dark); margin-bottom: .8rem; }
-    .card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-
-    .card-details { display: flex; gap: .8rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
-    .detail-pill {
-      background: var(--sand); color: var(--text);
-      font-size: .75rem; padding: .3rem .7rem; border-radius: 50px;
-      display: flex; align-items: center; gap: .3rem;
-    }
-
-    .card-rooms { border-top: 1px solid var(--sand); padding-top: 1rem; margin-bottom: 1.2rem; }
-    .room-row {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: .5rem 0; border-bottom: 1px dashed rgba(0,0,0,.06);
-      font-size: .85rem;
-    }
-    .room-row:last-child { border-bottom: none; }
-    .room-name { color: var(--text); flex: 1; }
-    .room-type { background: rgba(26,92,122,.08); color: var(--ocean); font-size: .72rem; padding: .2rem .6rem; border-radius: 50px; margin: 0 .5rem; }
-    .room-price { font-weight: 700; color: var(--ocean); font-size: .95rem; white-space: nowrap; }
-    .room-price sup { font-size: .65rem; }
-
-    .card-footer { display: flex; gap: .8rem; }
-    .btn-offer {
-      flex: 1; background: var(--ocean); color: #fff;
-      border: none; border-radius: 50px;
-      padding: .8rem 1rem; font-size: .9rem; font-weight: 600;
-      cursor: pointer; text-align: center; text-decoration: none;
-      font-family: 'DM Sans', sans-serif;
-      transition: background .25s;
-    }
-    .btn-offer:hover { background: var(--sky); }
-    .btn-wa {
-      width: 44px; height: 44px; border-radius: 50%;
-      background: #25d366; color: #fff;
-      border: none; font-size: 1.2rem;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; text-decoration: none;
-      flex-shrink: 0;
-      transition: transform .2s;
-    }
-    .btn-wa:hover { transform: scale(1.1); }
-
-    /* EMPTY STATE */
-    .empty { text-align: center; padding: 4rem; color: var(--muted); }
-    .empty div { font-size: 3rem; margin-bottom: 1rem; }
+    .insta-cta a:hover { background: var(--ocean); color: #fff; }
 
     /* FLOATING WA */
     .float-wa {
@@ -177,9 +118,6 @@
       animation: float 3s ease-in-out infinite;
     }
     @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-
-    .offer-card { animation: fadeUp .5s ease both; }
 
     /* FOOTER */
     footer {
@@ -194,7 +132,7 @@
 
     @media(max-width:768px) {
       nav .nav-links { display: none; }
-      .offers-grid { grid-template-columns: 1fr; }
+      .info-strip { gap: 1.2rem; }
     }
   </style>
 </head>
@@ -215,265 +153,45 @@
 <div class="page-hero">
   <div class="badge">🔥 Oferte selectate personal</div>
   <h1>Pachete Turistice<br/><em style="font-style:italic;color:rgba(255,255,255,.8);">Last Minute</em></h1>
-  <p>Oferte verificate și selectate de Stoica Robert. Sună pentru detalii și disponibilitate.</p>
-  <a href="https://whatsapp.com/channel/0029Vb7frS25Ui2VZGSEeA1g" target="_blank" style="display:inline-flex;align-items:center;gap:.6rem;margin-top:1.5rem;background:#25d366;color:#fff;padding:.7rem 1.5rem;border-radius:50px;text-decoration:none;font-weight:500;font-size:.9rem;">
-    🔔 Abonează-te pentru oferte noi
-  </a>
+  <p>Oferte verificate și selectate de Stoica Robert. Urmărește-ne pe Instagram pentru cele mai noi pachete.</p>
+  <div class="hero-actions">
+    <a href="https://whatsapp.com/channel/0029Vb7frS25Ui2VZGSEeA1g" target="_blank" class="btn-wa-hero">
+      🔔 Abonează-te pe WhatsApp
+    </a>
+    <a href="https://www.instagram.com/agentuldevacante" target="_blank" class="btn-insta-hero">
+      📷 Urmărește pe Instagram
+    </a>
+  </div>
 </div>
 
-<!-- FILTERS -->
-<div class="filters">
-  <span class="filter-label">Filtrează:</span>
-  <button class="filter-btn active" onclick="filterOffers('toate')">Toate</button>
-  <button class="filter-btn" onclick="filterOffers('bulgaria')">🇧🇬 Bulgaria</button>
-  <button class="filter-btn" onclick="filterOffers('turcia')">🇹🇷 Turcia</button>
-  <button class="filter-btn" onclick="filterOffers('grecia')">🇬🇷 Grecia</button>
-  <button class="filter-btn" onclick="filterOffers('egipt')">🇪🇬 Egipt</button>
+<!-- INFO STRIP -->
+<div class="info-strip">
+  <div class="info-item"><span>✈️</span><span>Zbor + transfer inclus</span></div>
+  <div class="info-item"><span>🍽️</span><span>All Inclusive disponibil</span></div>
+  <div class="info-item"><span>📞</span><span>Sună: <a href="tel:0763732210" style="color:var(--ocean);font-weight:600;">0763 732 210</a></span></div>
+  <div class="info-item"><span>🔒</span><span>Broker autorizat ASF</span></div>
 </div>
 
-<!-- OFFERS -->
-<section class="offers-section">
-  <div class="offers-count">Se afișează <span id="count">4</span> oferte last minute</div>
-  <div class="offers-grid" id="offersGrid">
-
-    <!-- CARD 1 – Bulgaria -->
-    <div class="offer-card" data-dest="bulgaria">
-      <div class="card-img" style="position:relative;">
-        <div class="card-img-bg">🏖️</div>
-        <div style="position:relative;z-index:1;text-align:center;color:#fff;">
-          <div style="font-size:3rem;">🇧🇬</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.1rem;margin-top:.5rem;">Obzor, Bulgaria</div>
-        </div>
-        <div class="last-minute-badge">🔥 Last Minute</div>
-        <div class="stars-badge">★★★★</div>
-      </div>
-      <div class="card-body">
-        <div class="card-location">📍 Obzor, Bulgaria · pe malul mării</div>
-        <div class="card-title">Hotel Alua Helios Bay (ex. RIU)</div>
-        <div class="card-desc">Hotel de 4 stele pe malul mării în Obzor. Piscină în aer liber și interioară, centru de fitness, grădină, karaoke și club pentru copii. WiFi gratuit inclus.</div>
-        <div class="card-details">
-          <div class="detail-pill">📅 01.06 – 05.06.2026</div>
-          <div class="detail-pill">🍽️ All Inclusive</div>
-          <div class="detail-pill">✈️ Zbor inclus</div>
-        </div>
-        <div class="card-rooms">
-          <div class="room-row">
-            <span class="room-name">Double Small Room (Seaview, Balcony)</span>
-            <span class="room-type">AI</span>
-            <span class="room-price">368<sup>72</sup> EUR</span>
-          </div>
-          <div class="room-row">
-            <span class="room-name">Camera Dublă Cu Vedere La Mare (Balcon/Terasă)</span>
-            <span class="room-type">AI</span>
-            <span class="room-price">395<sup>54</sup> EUR</span>
-          </div>
-          <div class="room-row">
-            <span class="room-name">Camera Dublă Superior Vedere La Mare</span>
-            <span class="room-type">AI</span>
-            <span class="room-price">408<sup>95</sup> EUR</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <a href="https://wa.me/40763732210?text=Buna%20ziua!%20Sunt%20interesat%20de%20oferta%20Hotel%20Alua%20Helios%20Bay%20Bulgaria%2001.06-05.06.2026.%20Puteti%20sa%20imi%20dati%20mai%20multe%20detalii%3F" target="_blank" class="btn-offer">
-            💬 Vreau această ofertă
-          </a>
-          <a href="tel:0763732210" class="btn-wa" title="Sună acum">📞</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 2 – Zakynthos Grecia -->
-    <div class="offer-card" data-dest="grecia">
-      <div class="card-img" style="position:relative;">
-        <div class="card-img-bg">🌊</div>
-        <div style="position:relative;z-index:1;text-align:center;color:#fff;">
-          <div style="font-size:3rem;">🇬🇷</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.1rem;margin-top:.5rem;">Zakynthos, Grecia</div>
-        </div>
-        <div class="last-minute-badge">⭐ Ofertă Specială</div>
-        <div class="stars-badge">★★★★</div>
-      </div>
-      <div class="card-body">
-        <div class="card-location">📍 Argassi, Insula Zakynthos · pe malul mării</div>
-        <div class="card-title">Hotel Iliessa Beach 4★</div>
-        <div class="card-desc">Hotel 4 stele pe malul mării în Argassi. Piscină sezonieră în aer liber, grădină, terasă și bar. La 6 min de Plaja Argassi și 6 km de aeroport. WiFi gratuit în toată proprietatea.</div>
-
-        <div class="card-details">
-          <div class="detail-pill">📅 7 nopți</div>
-          <div class="detail-pill">🍳 Mic dejun inclus</div>
-          <div class="detail-pill">✈️ Zbor București</div>
-          <div class="detail-pill">🧳 Bagaj cală inclus</div>
-          <div class="detail-pill">🚌 Transfer inclus</div>
-        </div>
-
-        <div class="card-rooms">
-          <div class="room-row">
-            <span class="room-name">11–18 iunie 2026</span>
-            <span class="room-type">BB</span>
-            <span class="room-price">459 EUR<sup>/pers</sup></span>
-          </div>
-          <div class="room-row">
-            <span class="room-name">18–25 iunie 2026</span>
-            <span class="room-type">BB</span>
-            <span class="room-price">509 EUR<sup>/pers</sup></span>
-          </div>
-          <div class="room-row">
-            <span class="room-name">10–17 septembrie 2026</span>
-            <span class="room-type">BB</span>
-            <span class="room-price">459 EUR<sup>/pers</sup></span>
-          </div>
-        </div>
-
-        <div style="background:rgba(201,147,58,.08);border-radius:.8rem;padding:.8rem 1rem;margin-bottom:1rem;font-size:.78rem;color:var(--muted);line-height:1.6;">
-          💳 Avans 20% · restul cu 40 zile înainte · Toate taxele incluse<br/>
-          ⚠️ Exclusă taxa de oraș (se achită la recepție)<br/>
-          🔒 Recomandăm asigurare medicală și storno
-        </div>
-
-        <div class="card-footer">
-          <a href="https://wa.me/40763732210?text=Buna%20ziua!%20Sunt%20interesat%20de%20oferta%20Hotel%20Iliessa%20Beach%20Zakynthos%207%20nopti.%20Puteti%20sa%20imi%20dati%20mai%20multe%20detalii%20si%20disponibilitate%3F" target="_blank" class="btn-offer">
-            💬 Vreau această ofertă
-          </a>
-          <a href="tel:0763732210" class="btn-wa" title="Sună acum">📞</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 3 – Rhodos Grecia -->
-    <div class="offer-card" data-dest="grecia">
-      <div class="card-img" style="position:relative;">
-        <div class="card-img-bg">🌅</div>
-        <div style="position:relative;z-index:1;text-align:center;color:#fff;">
-          <div style="font-size:3rem;">🇬🇷</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.1rem;margin-top:.5rem;">Rhodos, Grecia</div>
-        </div>
-        <div class="last-minute-badge">⭐ Ofertă Specială</div>
-        <div class="stars-badge">★★★★</div>
-      </div>
-      <div class="card-body">
-        <div class="card-location">📍 Pefkos, Insula Rhodos · direct pe plajă</div>
-        <div class="card-title">Hotel Ilyssion 4★ – Sea View</div>
-        <div class="card-desc">Hotel 4 stele direct pe plajă în stațiunea Pefkos, la 6 km de Lindos. 3 piscine exterioare, jacuzzi, teren de tenis, amfiteatru, miniclub copii și volei pe plajă. Camerele cu vedere la mare sunt la 15–30m de apă.</div>
-
-        <div class="card-details">
-          <div class="detail-pill">📅 7 nopți</div>
-          <div class="detail-pill">🍽️ All Inclusive</div>
-          <div class="detail-pill">🌊 Sea View</div>
-          <div class="detail-pill">✈️ Zbor București</div>
-          <div class="detail-pill">🧳 Bagaj cală inclus</div>
-          <div class="detail-pill">🚌 Transfer inclus</div>
-        </div>
-
-        <div class="card-rooms">
-          <div class="room-row">
-            <span class="room-name">03–10 septembrie 2026</span>
-            <span class="room-type">AI</span>
-            <span class="room-price">565 EUR<sup>/pers</sup></span>
-          </div>
-          <div class="room-row">
-            <span class="room-name">10–17 septembrie 2026</span>
-            <span class="room-type">AI</span>
-            <span class="room-price">565 EUR<sup>/pers</sup></span>
-          </div>
-          <div class="room-row">
-            <span class="room-name">👶 Copil până la 12 ani</span>
-            <span class="room-type">AI</span>
-            <span class="room-price">259 EUR<sup>/sejur</sup></span>
-          </div>
-        </div>
-
-        <div style="background:rgba(201,147,58,.08);border-radius:.8rem;padding:.8rem 1rem;margin-bottom:1rem;font-size:.78rem;color:var(--muted);line-height:1.6;">
-          💳 Avans 20% · restul cu 40 zile înainte · Toate taxele incluse<br/>
-          ⚠️ Exclusă taxa de oraș (se achită la recepție)<br/>
-          🔒 Recomandăm asigurare medicală și storno
-        </div>
-
-        <div class="card-footer">
-          <a href="https://wa.me/40763732210?text=Buna%20ziua!%20Sunt%20interesat%20de%20oferta%20Hotel%20Ilyssion%204*%20Rhodos%207%20nopti%20All%20Inclusive%20Sea%20View.%20Puteti%20sa%20imi%20dati%20mai%20multe%20detalii%20si%20disponibilitate%3F" target="_blank" class="btn-offer">
-            💬 Vreau această ofertă
-          </a>
-          <a href="tel:0763732210" class="btn-wa" title="Sună acum">📞</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 4 – Egipt Rixos -->
-    <div class="offer-card" data-dest="egipt">
-      <div class="card-img" style="position:relative;">
-        <div class="card-img-bg">🏜️</div>
-        <div style="position:relative;z-index:1;text-align:center;color:#fff;">
-          <div style="font-size:3rem;">🇪🇬</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.1rem;margin-top:.5rem;">El Alamein, Egipt</div>
-        </div>
-        <div class="last-minute-badge">👑 Premium 5★</div>
-        <div class="stars-badge">★★★★★</div>
-      </div>
-      <div class="card-body">
-        <div class="card-location">📍 El Alamein, Alexandria · plajă privată</div>
-        <div class="card-title">Rixos Premium Alamein 5★ Ultra All Inclusive</div>
-        <div class="card-desc">Resort 5 stele ultra all inclusive cu plajă privată, 2 piscine, centru de fitness și club copii. Rating Booking 8.8/10 · Certificate of Excellence TripAdvisor. Upgrade disponibil la cameră panoramică.</div>
-        <div class="card-details">
-          <div class="detail-pill">📅 07–14 iunie 2026</div>
-          <div class="detail-pill">🍽️ Ultra All Inclusive</div>
-          <div class="detail-pill">🏖️ Plajă privată</div>
-          <div class="detail-pill">✈️ Zbor București</div>
-          <div class="detail-pill">🧳 Bagaj cală inclus</div>
-          <div class="detail-pill">🚌 Transfer inclus</div>
-        </div>
-        <div class="card-rooms">
-          <div class="room-row">
-            <span class="room-name">Camera Deluxe / Adult</span>
-            <span class="room-type">UAI</span>
-            <span class="room-price">1225 EUR<sup>/pers</sup></span>
-          </div>
-          <div class="room-row">
-            <span class="room-name">👶 1 copil până la 12 ani</span>
-            <span class="room-type">UAI</span>
-            <span class="room-price">235 EUR<sup>/copil</sup></span>
-          </div>
-          <div class="room-row">
-            <span class="room-name">👶👶 2 copii (12 & 6 ani)</span>
-            <span class="room-type">UAI</span>
-            <span class="room-price">235 EUR<sup>/copil</sup></span>
-          </div>
-          <div class="room-row">
-            <span class="room-name">🌅 Upgrade Camera Panoramică</span>
-            <span class="room-type">+</span>
-            <span class="room-price">+59 EUR<sup>/pers</sup></span>
-          </div>
-        </div>
-        <div style="background:rgba(201,147,58,.08);border-radius:.8rem;padding:.8rem 1rem;margin-bottom:1rem;font-size:.78rem;color:var(--muted);line-height:1.6;">
-          💳 Avans 25% · restul cu 40 zile înainte · Toate taxele incluse<br/>
-          ✈️ Dus: București 03:05 → Alamein 05:45 | Retur: 21:35 → 00:10<br/>
-          🛂 Pașaport valabil minim 6 luni de la data returului<br/>
-          ⚠️ Exclusă taxa de oraș · 🔒 Recomandăm asigurare medicală și storno
-        </div>
-        <div class="card-footer">
-          <a href="https://wa.me/40763732210?text=Buna%20ziua!%20Sunt%20interesat%20de%20oferta%20Rixos%20Premium%20Alamein%205*%20Ultra%20All%20Inclusive%20Egipt%2007-14%20iunie%202026.%20Puteti%20sa%20imi%20dati%20mai%20multe%20detalii%3F" target="_blank" class="btn-offer">
-            💬 Vreau această ofertă
-          </a>
-          <a href="tel:0763732210" class="btn-wa" title="Sună acum">📞</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="offer-card" data-dest="coming" style="opacity:.5;pointer-events:none;">
-      <div class="card-img" style="position:relative;background:var(--sand);">
-        <div style="color:var(--muted);text-align:center;">
-          <div style="font-size:3rem;">🌍</div>
-          <div style="font-size:.9rem;margin-top:.5rem;color:var(--muted);">În curând</div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-location">📍 Destinație nouă</div>
-        <div class="card-title" style="color:var(--muted);">Ofertă în pregătire...</div>
-        <div class="card-desc">Urmează mai multe oferte last minute selectate special pentru tine.</div>
-        <div class="card-footer">
-          <div class="btn-offer" style="background:var(--muted);">În curând disponibil</div>
-        </div>
-      </div>
-    </div>
-
+<!-- INSTAGRAM FEED -->
+<section class="instagram-section">
+  <div class="section-header">
+    <div class="section-badge">📸 Oferte Live</div>
+    <h2>Ultimele oferte postate</h2>
+    <p>Apasă pe orice ofertă pentru detalii, apoi contactează-ne direct pe WhatsApp.</p>
+  </div>
+  <div class="behold-wrapper">
+    <behold-widget feed-id="2xeB2uO9Jz317ATNQM9p"></behold-widget>
+    <script>
+      (() => {
+        const d=document,s=d.createElement("script");s.type="module";
+        s.src="https://w.behold.so/widget.js";d.head.append(s);
+      })();
+    </script>
+  </div>
+  <div class="insta-cta">
+    <a href="https://www.instagram.com/agentuldevacante" target="_blank">
+      📷 Vezi toate ofertele pe Instagram
+    </a>
   </div>
 </section>
 
@@ -486,26 +204,6 @@
   <a href="tel:0763732210">📞 0763 732 210</a>
   <small>© 2026 AgentulDeVacante · Broker turism Craiova</small>
 </footer>
-
-<script>
-  function filterOffers(dest) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
-
-    const cards = document.querySelectorAll('.offer-card[data-dest]');
-    let visible = 0;
-    cards.forEach(card => {
-      if (card.dataset.dest === 'coming') return;
-      if (dest === 'toate' || card.dataset.dest === dest) {
-        card.style.display = '';
-        visible++;
-      } else {
-        card.style.display = 'none';
-      }
-    });
-    document.getElementById('count').textContent = visible;
-  }
-</script>
 
 </body>
 </html>
