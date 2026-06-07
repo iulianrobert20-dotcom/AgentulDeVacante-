@@ -4,6 +4,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E180CSG8CC"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E180CSG8CC');</script>
   <meta charset="UTF-8"/>
+  <meta name="color-scheme" content="light"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pagină negăsită | AgentulDeVacante</title>
   <meta name="robots" content="noindex, follow"/>
@@ -11,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--ocean:#1a5c7a;--gold:#c9933a;--dark:#14232e;--cream:#fdf9f3;--sand:#f5efe6;--text:#2d3d47;--muted:#7a8f99}
+    :root{color-scheme:light;--ocean:#1a5c7a;--gold:#c9933a;--dark:#14232e;--cream:#fdf9f3;--sand:#f5efe6;--text:#2d3d47;--muted:#7a8f99}
     body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center}
     .wrap{max-width:560px}
     .emoji{font-size:5rem;margin-bottom:1.5rem;animation:float 3s ease-in-out infinite}
@@ -33,6 +34,16 @@
     .ql:hover{background:var(--gold);color:var(--dark)}
     .progress{width:100%;height:4px;background:var(--sand);border-radius:2px;margin:1.5rem 0;overflow:hidden}
     .progress-bar{height:100%;background:linear-gradient(90deg,var(--ocean),var(--gold));border-radius:2px;width:0%;transition:width linear}
+  
+    /* Dark mode proof - force light colors */
+    html{background:#fdf9f3 !important}
+    body{background-color:#fdf9f3 !important;color:#2d3d47 !important}
+    @media(prefers-color-scheme:dark){
+      html,body{background-color:#fdf9f3 !important;color:#2d3d47 !important}
+      h1,h2,h3{color:#14232e !important}
+      p,li{color:#2d3d47 !important}
+      article{background:#fdf9f3 !important}
+    }
   </style>
   <meta property="og:image" content="https://agentuldevacante.ro/images/og-image.jpg"/>
   <meta property="og:image:width" content="1200"/>

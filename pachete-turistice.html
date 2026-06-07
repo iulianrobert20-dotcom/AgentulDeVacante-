@@ -10,6 +10,7 @@
     gtag('config', 'G-E180CSG8CC');
   </script>
   <meta charset="UTF-8"/>
+  <meta name="color-scheme" content="light"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="canonical" href="https://agentuldevacante.ro/pachete-turistice.html"/>
   <title>Pachete Turistice Last Minute | AgentulDeVacante – Stoica Robert</title>
@@ -131,6 +132,16 @@
     @media(max-width:768px) {
       nav .nav-links { display: none; }
       .info-strip { gap: 1.2rem; }
+    }
+  
+    /* Dark mode proof - force light colors */
+    html{background:#fdf9f3 !important}
+    body{background-color:#fdf9f3 !important;color:#2d3d47 !important}
+    @media(prefers-color-scheme:dark){
+      html,body{background-color:#fdf9f3 !important;color:#2d3d47 !important}
+      h1,h2,h3{color:#14232e !important}
+      p,li{color:#2d3d47 !important}
+      article{background:#fdf9f3 !important}
     }
   </style>
   <meta property="og:image" content="https://agentuldevacante.ro/images/og-image.jpg"/>

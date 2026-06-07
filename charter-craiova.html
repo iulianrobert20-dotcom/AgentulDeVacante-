@@ -4,6 +4,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E180CSG8CC"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E180CSG8CC');</script>
   <meta charset="UTF-8"/>
+  <meta name="color-scheme" content="light"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Charter Craiova 2026 | Vacanțe cu Plecare din Craiova | Zbor inclus | AgentulDeVacante</title>
   <meta name="description" content="Charter Craiova 2026 - vacanțe Grecia, Turcia, Bulgaria cu plecare din Craiova. Organizăm transport la aeroporturile cu zbor direct. Zbor + hotel inclus de la 299 EUR. Sună 0774 171 971."/>
@@ -27,7 +28,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--ocean:#1a5c7a;--sky:#2e8fb5;--gold:#c9933a;--dark:#14232e;--darker:#0d1a22;--cream:#fdf9f3;--sand:#f5efe6;--text:#2d3d47;--muted:#7a8f99;--white:#ffffff}
+    :root{color-scheme:light;--ocean:#1a5c7a;--sky:#2e8fb5;--gold:#c9933a;--dark:#14232e;--darker:#0d1a22;--cream:#fdf9f3;--sand:#f5efe6;--text:#2d3d47;--muted:#7a8f99;--white:#ffffff}
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;background:rgba(253,249,243,0.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,147,58,.12);transition:box-shadow .3s}
@@ -114,6 +115,16 @@
     @keyframes floatAnim{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
     @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.how-grid{grid-template-columns:1fr}.how-grid::before{display:none}.footer-grid{grid-template-columns:1fr;gap:2rem}.dest-grid{grid-template-columns:1fr}}
     @media(max-width:640px){.nav-links{display:none}.hero-h1{font-size:2rem}}
+  
+    /* Dark mode proof - force light colors */
+    html{background:#fdf9f3 !important}
+    body{background-color:#fdf9f3 !important;color:#2d3d47 !important}
+    @media(prefers-color-scheme:dark){
+      html,body{background-color:#fdf9f3 !important;color:#2d3d47 !important}
+      h1,h2,h3{color:#14232e !important}
+      p,li{color:#2d3d47 !important}
+      article{background:#fdf9f3 !important}
+    }
   </style>
 </head>
 <body>
