@@ -42,6 +42,13 @@
     .social-btn.wa{background:#25d366;color:white;animation:floatAnim 3s ease-in-out infinite}
     @keyframes floatAnim{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
   
+    /* Related articles */
+    .related-articles{background:var(--sand);padding:2rem;border-radius:1rem;margin:2.5rem 0}
+    .related-articles h3{font-family:"Playfair Display",serif;font-size:1.2rem;color:var(--dark);margin-bottom:1.2rem}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem}
+    .related-card{background:white;padding:1rem 1.2rem;border-radius:.7rem;text-decoration:none;color:var(--text);font-weight:500;font-size:.9rem;border:1px solid rgba(201,147,58,.15);transition:box-shadow .2s,transform .2s}
+    .related-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.1);transform:translateY(-2px)}
+    .related-card span{display:block;font-size:1.3rem;margin-bottom:.3rem}
     /* Dark mode proof - force light colors */
     html{background:#fdf9f3 !important}
     body{background-color:#fdf9f3 !important;color:#2d3d47 !important}
@@ -183,6 +190,16 @@
   <p>Antalya oferă <strong>cel mai complet pachet din Turcia</strong>: hoteluri all inclusive de top + obiective turistice fascinante la 10-60 min distanță. E perfect pentru familii care vor să combine 4-5 zile de plajă relaxantă cu 2-3 zile de explorare culturală.</p>
 
   <p><strong>Top 3 obligatorii:</strong> Kaleiçi (orașul vechi), Düden Waterfalls (cascade), Perge + Aspendos (ruine antice). Doar cu acestea 3 ai o vacanță completă!</p>
+
+  <div class="related-articles">
+    <h3>📖 Citește și despre Turcia și destinații similare</h3>
+    <div class="related-grid">
+      <a href="antalya-vs-belek-vs-side-2026.html" class="related-card"><span>🗺️</span>Antalya vs Belek vs Side – ce să alegi</a>
+      <a href="top-10-hoteluri-all-inclusive-antalya.html" class="related-card"><span>🏨</span>Top 10 Hoteluri All Inclusive Antalya</a>
+      <a href="grecia-sau-turcia-ce-sa-alegi-2026.html" class="related-card"><span>⚖️</span>Grecia sau Turcia? Comparație completă</a>
+      <a href="vacante-last-minute-craiova.html" class="related-card"><span>✈️</span>Vacanțe Last Minute din Craiova</a>
+    </div>
+  </div>
 </article>
 
 <div class="social-dock">

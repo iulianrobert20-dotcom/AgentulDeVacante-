@@ -42,6 +42,13 @@
     .social-btn.wa{background:#25d366;color:white;animation:floatAnim 3s ease-in-out infinite}
     @keyframes floatAnim{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
   
+    /* Related articles */
+    .related-articles{background:var(--sand);padding:2rem;border-radius:1rem;margin:2.5rem 0}
+    .related-articles h3{font-family:"Playfair Display",serif;font-size:1.2rem;color:var(--dark);margin-bottom:1.2rem}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem}
+    .related-card{background:white;padding:1rem 1.2rem;border-radius:.7rem;text-decoration:none;color:var(--text);font-weight:500;font-size:.9rem;border:1px solid rgba(201,147,58,.15);transition:box-shadow .2s,transform .2s}
+    .related-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.1);transform:translateY(-2px)}
+    .related-card span{display:block;font-size:1.3rem;margin-bottom:.3rem}
     /* Dark mode proof - force light colors */
     html{background:#fdf9f3 !important}
     body{background-color:#fdf9f3 !important;color:#2d3d47 !important}
@@ -154,6 +161,16 @@
   <p>Creta oferă <strong>cel mai complet pachet all inclusive din Grecia</strong>: hoteluri de top (Aldemar, Grecotel, Mitsis), plaje superbe, cultură antică fascinantă și gastronomie de nivel mondial. E mai scumpă cu 20-30% decât Thassos, dar oferă mult mai multă varietate.</p>
 
   <p><strong>Recomandarea mea:</strong> Grecotel Creta Palace pentru familii (raport calitate-preț excelent), Aldemar Royal Mare pentru cupluri care vor lux absolut.</p>
+
+  <div class="related-articles">
+    <h3>📖 Citește și despre Grecia și destinații similare</h3>
+    <div class="related-grid">
+      <a href="vacante-halkidiki-grecia-2026.html" class="related-card"><span>🏖️</span>Vacanțe Halkidiki 2026</a>
+      <a href="cele-mai-frumoase-plaje-din-thassos-2026.html" class="related-card"><span>🌊</span>Cele mai frumoase plaje din Thassos</a>
+      <a href="cat-costa-o-vacanta-in-grecia-2026.html" class="related-card"><span>💰</span>Cât costă o vacanță în Grecia 2026</a>
+      <a href="grecia-sau-turcia-ce-sa-alegi-2026.html" class="related-card"><span>⚖️</span>Grecia sau Turcia? Comparație</a>
+    </div>
+  </div>
 </article>
 
 <div class="social-dock">
