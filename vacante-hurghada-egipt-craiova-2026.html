@@ -131,7 +131,7 @@
 
   <div class="included-grid">
     <div class="included-item"><strong>Zbor charter</strong>Dus-intors din Romania spre Hurghada, Egipt</div>
-    <div class="included-item"><strong>Transport Craiova</strong>Organizat de noi la aeroport — inclus in pret</div>
+    <div class="included-item"><strong>Transport Craiova</strong>Organizat până la aeroport — inclus in pret</div>
     <div class="included-item"><strong>Transfer</strong>Aeroport Hurghada — hotel — aeroport</div>
     <div class="included-item"><strong>Cazare 7 nopti</strong>Hotel 4-5 stele all inclusive sau ultra AI</div>
     <div class="included-item"><strong>All Inclusive</strong>Mese, bauturi, animatie, facilitati hotel</div>
@@ -272,5 +272,15 @@
   <p>&copy; 2026 AgentulDeVacante &ndash; Stoica Robert | <a href="index.html">Acasa</a> | <a href="charter-craiova.html">Charter Craiova</a> | <a href="tel:0774171971">0774 171 971</a> | <a href="mailto:contact@agentuldevacante.ro">contact@agentuldevacante.ro</a> | <a href="politica-confidentialitate.html">Confidentialitate</a></p>
 </footer>
 
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a');if(!a||typeof gtag!=='function')return;
+  var h=a.getAttribute('href')||'';
+  if(h.indexOf('wa.me/')>-1){gtag('event','whatsapp_click',{'link_url':h,'page_location':location.href});}
+  else if(h.indexOf('whatsapp.com/channel')>-1){gtag('event','whatsapp_channel_click',{'page_location':location.href});}
+  else if(h.indexOf('tel:')===0){gtag('event','phone_click',{'page_location':location.href});}
+  else if(h.indexOf('mailto:')===0){gtag('event','email_click',{'page_location':location.href});}
+});
+</script>
 </body>
 </html>

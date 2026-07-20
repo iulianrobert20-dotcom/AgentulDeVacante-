@@ -108,6 +108,28 @@
     }
     .insta-cta a:hover { background: var(--ocean); color: #fff; }
 
+    /* OFERTE CARDS */
+    .oferte-section { padding: 4rem 6vw 3rem; background: var(--cream); }
+    .oferte-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto 1.5rem; }
+    .oferta-card { background: #fff; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 24px rgba(20,35,46,.08); border: 1px solid rgba(201,147,58,.15); display: flex; flex-direction: column; }
+    .oferta-head { background: linear-gradient(135deg, var(--ocean), var(--sky)); color: #fff; padding: 1.4rem 1.4rem 1.2rem; }
+    .oferta-emoji { font-size: 2rem; display: block; margin-bottom: .3rem; }
+    .oferta-dest { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; }
+    .oferta-hotel { font-size: .88rem; opacity: .85; margin-top: .2rem; }
+    .oferta-stars { color: var(--gold); letter-spacing: .1em; }
+    .oferta-tag { display: inline-block; background: rgba(201,147,58,.15); color: var(--gold); font-size: .75rem; font-weight: 600; padding: .3rem .8rem; border-radius: 50px; margin: 1rem 1.4rem 0; }
+    .oferta-body { padding: 1rem 1.4rem 1.4rem; display: flex; flex-direction: column; flex: 1; }
+    .oferta-list { list-style: none; margin: 0 0 1rem; padding: 0; }
+    .oferta-list li { font-size: .9rem; padding: .35rem 0; border-bottom: 1px dashed rgba(122,143,153,.2); display: flex; gap: .6rem; align-items: baseline; }
+    .oferta-list li:last-child { border-bottom: none; }
+    .oferta-pret { margin-top: auto; padding-top: .6rem; }
+    .oferta-pret .suma { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--ocean); font-weight: 700; }
+    .oferta-pret .suma small { font-size: 1rem; font-weight: 400; }
+    .oferta-pret .detaliu { font-size: .8rem; color: var(--muted); margin-top: .1rem; }
+    .oferta-wa { display: flex; align-items: center; justify-content: center; gap: .5rem; background: #25d366; color: #fff; text-decoration: none; font-weight: 600; font-size: .95rem; padding: .8rem 1rem; border-radius: 50px; margin-top: 1rem; transition: background .2s; }
+    .oferta-wa:hover { background: #1da851; }
+    .oferte-nota { max-width: 720px; margin: 0 auto; text-align: center; font-size: .82rem; color: var(--muted); line-height: 1.6; }
+
     /* SOCIAL DOCK */
     .social-dock{position:fixed;right:1.2rem;bottom:5.5rem;z-index:999;display:flex;flex-direction:column;gap:.6rem}
     .social-btn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.35rem;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .2s,box-shadow .2s}
@@ -166,10 +188,13 @@
 <div class="page-hero">
   <div class="badge">🔥 Oferte selectate personal</div>
   <h1>Pachete Turistice<br/><em style="font-style:italic;color:rgba(255,255,255,.8);">Last Minute</em></h1>
-  <p>Oferte verificate și selectate de Stoica Robert. Urmărește-ne pe Instagram pentru cele mai noi pachete.</p>
+  <p>Oferte verificate și selectate de Stoica Robert. Scrie-mi pe WhatsApp și îți fac oferta pe datele tale.</p>
   <div class="hero-actions">
-    <a href="https://whatsapp.com/channel/0029Vb7frS25Ui2VZGSEeA1g" target="_blank" class="btn-wa-hero">
-      🔔 Abonează-te pe WhatsApp
+    <a href="https://wa.me/40774171971?text=Buna ziua! As dori o oferta de vacanta." target="_blank" class="btn-wa-hero">
+      💬 Cere oferta ta pe WhatsApp
+    </a>
+    <a href="https://whatsapp.com/channel/0029Vb7frS25Ui2VZGSEeA1g" target="_blank" class="btn-insta-hero" style="background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.4);">
+      🔔 Abonează-te la canal
     </a>
     <a href="https://www.instagram.com/agentuldevacante" target="_blank" class="btn-insta-hero">
       📷 Urmărește pe Instagram
@@ -186,12 +211,91 @@
   <div class="info-item"><span>🔒</span><span>Broker autorizat ASF</span></div>
 </div>
 
+<!-- OFERTE EXOTICE -->
+<section class="oferte-section" id="oferte">
+  <div class="section-header">
+    <div class="section-badge" style="background:linear-gradient(135deg,var(--ocean),var(--sky));">🌴 Exotic · Iarnă 2027</div>
+    <h2>Vacanțe Exotice – Ianuarie 2027</h2>
+    <p>Trei oferte concrete, cu zbor și transfer incluse. Prețurile afișate sunt totale, pentru 2 adulți.</p>
+  </div>
+  <div class="oferte-grid">
+
+    <div class="oferta-card">
+      <div class="oferta-head">
+        <span class="oferta-emoji">🏝️</span>
+        <div class="oferta-dest">Mauritius</div>
+        <div class="oferta-hotel">Sunrise Attitude <span class="oferta-stars">★★★★</span> · Belle Mare</div>
+      </div>
+      <div class="oferta-tag">💍 Ideal pentru lună de miere</div>
+      <div class="oferta-body">
+        <ul class="oferta-list">
+          <li><span>✈️</span><span>Zbor + transfer incluse</span></li>
+          <li><span>🏨</span><span>Apartament Lună de Miere · 7 nopți</span></li>
+          <li><span>🍽️</span><span>Demipensiune</span></li>
+          <li><span>📅</span><span>06 – 13 ianuarie 2027</span></li>
+        </ul>
+        <div class="oferta-pret">
+          <div class="suma">3.362 <small>EUR</small></div>
+          <div class="detaliu">preț total · 2 adulți · 7 nopți</div>
+        </div>
+        <a href="https://wa.me/40774171971?text=Buna ziua! Ma intereseaza oferta Mauritius - Sunrise Attitude 4* (06-13 ianuarie 2027)." target="_blank" class="oferta-wa">💬 Cere oferta Mauritius</a>
+      </div>
+    </div>
+
+    <div class="oferta-card">
+      <div class="oferta-head">
+        <span class="oferta-emoji">🌆</span>
+        <div class="oferta-dest">Hong Kong</div>
+        <div class="oferta-hotel">Ramada by Wyndham Grand View <span class="oferta-stars">★★★★</span></div>
+      </div>
+      <div class="oferta-tag">🧳 City break exotic</div>
+      <div class="oferta-body">
+        <ul class="oferta-list">
+          <li><span>✈️</span><span>Zbor din București (cu escală) + transfer</span></li>
+          <li><span>🏨</span><span>Cameră Superior · 7 nopți</span></li>
+          <li><span>🍽️</span><span>Fără masă</span></li>
+          <li><span>📅</span><span>04 – 13 ianuarie 2027</span></li>
+        </ul>
+        <div class="oferta-pret">
+          <div class="suma">de la 3.478 <small>EUR</small></div>
+          <div class="detaliu">preț total · 2 adulți · 7 nopți</div>
+        </div>
+        <a href="https://wa.me/40774171971?text=Buna ziua! Ma intereseaza oferta Hong Kong - Ramada Grand View 4* (ianuarie 2027)." target="_blank" class="oferta-wa">💬 Cere oferta Hong Kong</a>
+      </div>
+    </div>
+
+    <div class="oferta-card">
+      <div class="oferta-head">
+        <span class="oferta-emoji">🗽</span>
+        <div class="oferta-dest">New York</div>
+        <div class="oferta-hotel">Holiday Inn Manhattan 6th Ave Chelsea <span class="oferta-stars">★★★★</span></div>
+      </div>
+      <div class="oferta-tag">🇺🇸 Manhattan, în inima orașului</div>
+      <div class="oferta-body">
+        <ul class="oferta-list">
+          <li><span>✈️</span><span>Zbor din București + transfer</span></li>
+          <li><span>🏨</span><span>Cameră Standard · 7 nopți</span></li>
+          <li><span>🍽️</span><span>Fără masă</span></li>
+          <li><span>📅</span><span>04 – 12 ianuarie 2027</span></li>
+        </ul>
+        <div class="oferta-pret">
+          <div class="suma">de la 3.518 <small>EUR</small></div>
+          <div class="detaliu">preț total · 2 adulți · 7 nopți</div>
+        </div>
+        <a href="https://wa.me/40774171971?text=Buna ziua! Ma intereseaza oferta New York - Holiday Inn Chelsea 4* (ianuarie 2027)." target="_blank" class="oferta-wa">💬 Cere oferta New York</a>
+      </div>
+    </div>
+
+  </div>
+  <p class="oferte-nota">Tarife totale pentru 2 adulți, valabile la 20.07.2026 — locurile și prețurile se pot schimba. Scrie-mi pe WhatsApp și verific pe loc disponibilitatea pentru datele tale.</p>
+</section>
+
 <!-- INSTAGRAM FEED -->
 <section class="instagram-section">
   <div class="section-header">
     <div class="section-badge">📸 Oferte Live</div>
-    <h2>Ultimele oferte postate</h2>
-    <p>Apasă pe orice ofertă pentru detalii, apoi contactează-ne direct pe WhatsApp.</p>
+    <h2>Ultimele oferte pe Instagram</h2>
+    <p>Apasă pe orice ofertă pentru detalii, apoi contactează-mă direct pe WhatsApp.</p>
   </div>
   <div class="behold-wrapper">
     <behold-widget feed-id="2xeB2uO9Jz317ATNQM9p"></behold-widget>
@@ -245,5 +349,15 @@
   <small>© 2026 AgentulDeVacante · Specialist turism Craiova</small>
 </footer>
 
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a');if(!a||typeof gtag!=='function')return;
+  var h=a.getAttribute('href')||'';
+  if(h.indexOf('wa.me/')>-1){gtag('event','whatsapp_click',{'link_url':h,'page_location':location.href});}
+  else if(h.indexOf('whatsapp.com/channel')>-1){gtag('event','whatsapp_channel_click',{'page_location':location.href});}
+  else if(h.indexOf('tel:')===0){gtag('event','phone_click',{'page_location':location.href});}
+  else if(h.indexOf('mailto:')===0){gtag('event','email_click',{'page_location':location.href});}
+});
+</script>
 </body>
 </html>

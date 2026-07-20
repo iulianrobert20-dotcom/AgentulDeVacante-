@@ -309,7 +309,7 @@
 
   <div class="cta-box">
     <h3>📞 Vrei Ofertă Personalizată pentru Grecia?</h3>
-    <p>Sună acum la <strong>0774 171 971</strong> și îți trimit oferte exacte cu prețuri reale pentru datele tale. Organizăm transport din Craiova + zbor charter + hotel all inclusive!</p>
+    <p>Sună acum la <strong>0774 171 971</strong> și îți trimit oferte exacte cu prețuri reale pentru datele tale. Organizez transport din Craiova + zbor charter + hotel all inclusive!</p>
     <a href="tel:0774171971" class="btn-gold">Sună acum</a>
     <a href="https://wa.me/40774171971?text=Buna ziua! Vreau oferta pentru Grecia." class="btn-gold" style="margin-left:1rem">WhatsApp</a>
   </div>
@@ -344,5 +344,15 @@
   <p>© 2026 AgentulDeVacante | <a href="index.html">Acasă</a> | <a href="vacante-halkidiki-grecia-2026.html">Vacanțe Grecia</a> | <a href="tel:0774171971">0774 171 971</a> | <a href="mailto:contact@agentuldevacante.ro">contact@agentuldevacante.ro</a> | <a href="politica-confidentialitate.html">Confidențialitate</a></p>
 </footer>
 
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a');if(!a||typeof gtag!=='function')return;
+  var h=a.getAttribute('href')||'';
+  if(h.indexOf('wa.me/')>-1){gtag('event','whatsapp_click',{'link_url':h,'page_location':location.href});}
+  else if(h.indexOf('whatsapp.com/channel')>-1){gtag('event','whatsapp_channel_click',{'page_location':location.href});}
+  else if(h.indexOf('tel:')===0){gtag('event','phone_click',{'page_location':location.href});}
+  else if(h.indexOf('mailto:')===0){gtag('event','email_click',{'page_location':location.href});}
+});
+</script>
 </body>
 </html>
