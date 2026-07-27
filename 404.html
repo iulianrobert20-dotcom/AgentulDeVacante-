@@ -3,10 +3,13 @@
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E180CSG8CC"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-E180CSG8CC');</script>
-  <meta charset="UTF-8"/>
+
+<meta charset="UTF-8"/>
   <meta name="color-scheme" content="light"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pagină negăsită | AgentulDeVacante</title>
+    <link rel="icon" type="image/png" sizes="128x128" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<title>Pagină negăsită | AgentulDeVacante</title>
   <meta name="robots" content="noindex, follow"/>
   <link rel="canonical" href="https://agentuldevacante.ro/"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -18,7 +21,7 @@
     .emoji{font-size:5rem;margin-bottom:1.5rem;animation:float 3s ease-in-out infinite}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
     .logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--ocean);text-decoration:none;display:inline-block;margin-bottom:2.5rem}
-    .logo span{color:var(--gold);font-style:italic}
+    .logo span{color:var(--gold);font-style:italic}.logo-404{display:inline-flex;align-items:center;gap:.6rem}.logo-404 img{width:64px;height:50px;object-fit:contain}.logo-404 .article-brand-text>span{color:#009aaa;font-style:normal}
     h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.4rem);color:var(--dark);margin-bottom:1rem}
     p{color:var(--muted);font-size:1rem;line-height:1.75;margin-bottom:1.5rem}
     .countdown{font-size:1.05rem;color:var(--text);margin-bottom:2rem}
@@ -45,15 +48,20 @@
       article{background:#fdf9f3 !important}
     }
   </style>
-  <meta property="og:image" content="https://agentuldevacante.ro/images/og-image.jpg"/>
+  <meta property="og:image" content="https://agentuldevacante.ro/og-image.jpg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
   <meta property="og:image:alt" content="AgentulDeVacante – Vacanțe Last Minute din Craiova"/>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script defer src="assets/js/site.js"></script>
 </head>
 <body>
 
 <div class="wrap">
-  <a href="/" class="logo">Agentul<span>DeVacante</span></a>
+  <a href="/" class="logo logo-404" aria-label="AgentulDeVacante.ro - Acasă">
+  <img src="assets/images/logo-mark.png" alt="" width="64" height="50" aria-hidden="true">
+  <span class="article-brand-text">Agentul<span>DeVacante</span><small>.ro</small></span>
+  </a>
 
   <div class="emoji">🏖️</div>
 
