@@ -39,3 +39,7 @@
 
 ## Publicare
 Copiază conținutul acestui folder în rădăcina repository-ului GitHub Pages, păstrând structura folderului `assets`.
+
+**La următoarea publicare:** șterge din repository-ul public vechiul director `/images/` care conține copii HTML ale întregului site. Copia a fost scoasă din acest folder și păstrată în `audit/legacy-site-copy-2026-09-28/` pentru recuperare. O copiere simplă peste fișierele existente nu elimină paginile vechi de pe server. Verifică după publicare că `/images/grecia-sau-turcia-ce-sa-alegi-2026.html` nu mai afișează textul și prețurile vechi, iar URL-urile canonice de la rădăcină răspund corect.
+
+URL-urile vechi `/vacante-bulgaria-craiova-2026.html` și `/agentuldevacante.ro/grecia-sau-turcia-ce-sa-alegi-2026.html` arată în prezent pagina 404. Fișierul `404.html` sugerează acum paginile corecte și nu mai trimite automat vizitatorul la homepage. O redirecționare HTTP 301 reală necesită regulă la nivelul gazdei sau al serviciului din fața GitHub Pages; un fișier HTML cu meta refresh nu ar fi echivalent.

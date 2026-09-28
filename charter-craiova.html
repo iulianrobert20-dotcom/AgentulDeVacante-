@@ -358,15 +358,6 @@
   window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);});
   function toggleFaq(item){const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');}
 </script>
-<script>
-document.addEventListener('click',function(e){
-  var a=e.target.closest&&e.target.closest('a');if(!a||typeof gtag!=='function')return;
-  var h=a.getAttribute('href')||'';
-  if(h.indexOf('wa.me/')>-1){gtag('event','whatsapp_click',{'link_url':h,'page_location':location.href});}
-  else if(h.indexOf('whatsapp.com/channel')>-1){gtag('event','whatsapp_channel_click',{'page_location':location.href});}
-  else if(h.indexOf('tel:')===0){gtag('event','phone_click',{'page_location':location.href});}
-  else if(h.indexOf('mailto:')===0){gtag('event','email_click',{'page_location':location.href});}
-});
-</script>
+
 </body>
 </html>

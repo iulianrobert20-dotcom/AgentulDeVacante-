@@ -3,6 +3,13 @@
 
   const analyticsId = 'G-E180CSG8CC';
   const consentKey = 'adv-cookie-consent-v1';
+  let analyticsAllowed = false;
+
+  function track(eventName, details){
+    if (analyticsAllowed && typeof window.gtag === 'function') {
+      window.gtag('event', eventName, details);
+    }
+  }
 
   function readConsent(){
     try {
@@ -57,9 +64,15 @@
 
     const applyChoice = (choice) => {
       saveConsent(choice);
+      analyticsAllowed = choice === 'accepted';
       banner.hidden = true;
       settings.hidden = false;
-      if (choice === 'accepted') loadAnalytics();
+      if (analyticsAllowed) loadAnalytics();
+      else if (document.querySelector('script[data-adv-analytics]')) {
+        // Scriptul GA deja încărcat nu poate fi descărcat în siguranță; reîncărcarea
+        // oprește colectarea imediat ce preferința de refuz este salvată.
+        window.location.reload();
+      }
     };
 
     banner.addEventListener('click', (event) => {
@@ -75,6 +88,7 @@
     const consent = readConsent();
     if (consent === 'accepted') {
       banner.hidden = true;
+      analyticsAllowed = true;
       loadAnalytics();
     } else if (consent === 'rejected') {
       banner.hidden = true;
@@ -133,9 +147,25 @@
   function setupLeadForm(){
     const form = document.querySelector('[data-lead-form]');
     if (!form) return;
+    let formStarted = false;
+    let lastFormErrorAt = 0;
+    form.addEventListener('invalid', () => {
+      const now = Date.now();
+      if (now - lastFormErrorAt < 1000) return;
+      lastFormErrorAt = now;
+      track('form_error', { form_name: 'cerere_vacanta', page_location: location.href });
+    }, true);
+    form.addEventListener('input', () => {
+      if (formStarted) return;
+      formStarted = true;
+      track('form_start', { form_name: 'cerere_vacanta', page_location: location.href });
+    });
     form.addEventListener('submit', (event) => {
       event.preventDefault();
-      if (!form.reportValidity()) return;
+      if (!form.reportValidity()) {
+        track('form_error', { form_name: 'cerere_vacanta', page_location: location.href });
+        return;
+      }
       const data = new FormData(form);
       const lines = [
         'Bună ziua! Doresc o ofertă de vacanță.',
@@ -152,10 +182,8 @@
         data.get('detalii') ? `Alte detalii: ${data.get('detalii')}` : ''
       ].filter(Boolean);
       const url = `https://wa.me/40774171971?text=${encodeURIComponent(lines.join('\n'))}`;
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'generate_lead', { method: 'whatsapp_form', page_location: location.href });
-      }
-      showToast('Se deschide WhatsApp cu cererea completată.');
+      track('whatsapp_open', { method: 'whatsapp_form', page_location: location.href });
+      showToast('Se deschide WhatsApp. Apasă Trimite pentru a transmite cererea.');
       window.setTimeout(() => window.open(url, '_blank', 'noopener'), 250);
     });
   }
@@ -163,12 +191,12 @@
   function setupTracking(){
     document.addEventListener('click', (event) => {
       const link = event.target.closest('a[href]');
-      if (!link || typeof window.gtag !== 'function') return;
+      if (!link) return;
       const href = link.getAttribute('href') || '';
-      if (href.includes('wa.me/')) window.gtag('event', 'whatsapp_click', { link_url: href, page_location: location.href });
-      else if (href.includes('whatsapp.com/channel')) window.gtag('event', 'whatsapp_channel_click', { page_location: location.href });
-      else if (href.startsWith('tel:')) window.gtag('event', 'phone_click', { page_location: location.href });
-      else if (href.startsWith('mailto:')) window.gtag('event', 'email_click', { page_location: location.href });
+      if (href.includes('wa.me/')) track('whatsapp_open', { method: 'link', link_url: href, page_location: location.href });
+      else if (href.includes('whatsapp.com/channel')) track('whatsapp_channel_click', { page_location: location.href });
+      else if (href.startsWith('tel:')) track('phone_click', { page_location: location.href });
+      else if (href.startsWith('mailto:')) track('email_click', { page_location: location.href });
     });
   }
 

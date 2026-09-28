@@ -34,6 +34,9 @@ assert.doesNotMatch(summer, /529 EUR|joi din CRA|Suntem in plin sezon|Suntem dej
 assert.match(summer, /Sezonul de vară 2026 s-a încheiat/);
 
 const sitemap = await fs.readFile(path.join(root, 'sitemap.xml'), 'utf8');
-for (const name of names) assert.match(sitemap, new RegExp(`<loc>https://agentuldevacante\\.ro/${name.replaceAll('.', '\\.')}<\\/loc>\\s*<lastmod>2026-09-23<\\/lastmod>`));
+for (const name of names) {
+  const lastmod = ['pachete-turistice.html', 'vacante-mallorca-palma-craiova-2026.html'].includes(name) ? '2026-09-28' : '2026-09-23';
+  assert.match(sitemap, new RegExp(`<loc>https://agentuldevacante\\.ro/${name.replaceAll('.', '\\.')}<\\/loc>\\s*<lastmod>${lastmod}<\\/lastmod>`));
+}
 
 console.log('P0 OK: HTML, JSON-LD, linkuri locale, afirmații expirate și sitemap.');
